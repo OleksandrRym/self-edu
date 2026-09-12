@@ -1,4 +1,4 @@
-package book;
+package book.java_cc;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -10,7 +10,7 @@ public class Latch {
     private final static ExecutorService ex = Executors.newFixedThreadPool(2);
     private final static CountDownLatch latch = new CountDownLatch(2);
 
-    static void main() {
+    static void main(){
         ex.execute(() -> {
             try {
                 System.out.println("t1 -1");
@@ -36,3 +36,4 @@ public class Latch {
         });
     }
 }
+
