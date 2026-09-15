@@ -22,7 +22,7 @@ public class CyclicBarrierDemo {
                System.out.println("Ready " + names.get(0));
                sleep(3000);
                CYCLIC_BARRIER.await();
-               System.out.println("start" + names.get(1));
+               System.out.println("start" + names.get(0));
            } catch (InterruptedException | BrokenBarrierException e) {
                throw new RuntimeException(e);
            }
