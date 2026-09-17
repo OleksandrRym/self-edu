@@ -13,16 +13,16 @@ public class FuterTaskDemo {
         executor.shutdown();
     }
 
-    public static void get10Task(ExecutorService executor) throws InterruptedException, ExecutionException{
+    public static void get10Task(ExecutorService executor) throws InterruptedException, ExecutionException {
         List<Future<Integer>> tasks = new ArrayList<>();
-        IntStream.range(1,10).forEach(i -> {
+        IntStream.range(1, 10).forEach(i -> {
             Future<Integer> future = executor.submit(() -> {
                 Thread.sleep(10_000);//work
                 return i;
             });
             tasks.add(future);
         });
-        for (Future<Integer> r : tasks) {
+          for (Future<Integer> r : tasks) {
             System.out.println(r.get());
         }
     }
