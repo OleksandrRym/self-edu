@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 
 import static java.lang.Thread.sleep;
 
-public class ExecutorDemo {
+public class RejectionPolicyDemo {
 
     static void main() {
         ThreadPoolExecutor executor = new ThreadPoolExecutor(8, 8, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(8));

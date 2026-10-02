@@ -19,7 +19,7 @@ public class TimingThreadPool extends ThreadPoolExecutor {
 
     protected void beforeExecute(Thread t, Runnable r) {
         super.beforeExecute(t, r);
-        log.fine(String.format("Thread %s: start %s", t, r));
+        log.info(String.format("Thread %s: start %s", t, r));
         startTime.set(System.nanoTime());
     }
 
@@ -29,7 +29,7 @@ public class TimingThreadPool extends ThreadPoolExecutor {
             long taskTime = endTime - startTime.get();
             numTasks.incrementAndGet();
             totalTime.addAndGet(taskTime);
-            log.fine(String.format("Thread %s: end %s, time=%dns",
+            log.info(String.format("Thread %s: end %s, time=%dns",
                     t, r, taskTime));
         } finally {
             super.afterExecute(r, t);

@@ -10,6 +10,6 @@ public class CESDemo {
         TIMING_THREAD_POOL.execute(() -> {
             System.out.println("run");
         });
-        TIMING_THREAD_POOL.terminated();
+        TIMING_THREAD_POOL.close();
     }
 }
